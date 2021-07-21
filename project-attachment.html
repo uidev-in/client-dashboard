@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Project Attachment | ExMyB </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Responsive bootstrap 4 admin template" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link href="https://django-b2b.s3.amazonaws.com/static/images/logo/favicon.png" rel="icon">
+    <link href="https://django-b2b.s3.amazonaws.com/static/images/logo/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet" />
+    <link href="assets/css/custom-style.min.css" rel="stylesheet" type="text/css" id="app-stylesheet" />
+    <link href="https://transloadit.edgly.net/releases/uppy/v1.6.0/uppy.min.css" rel="stylesheet">
+ 
+</head>
+
+<body class="left-side-menu-dark topbar-light">
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <ul class="list-unstyled topnav-menu float-right mb-0">
+                <!-- Notification -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline noti-icon"></i>
+                        <span class="noti-icon-badge"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+
+                        <!-- item-->
+                        <div class="dropdown-item noti-title">
+                            <h5 class="font-16 text-white m-0">
+                                <span class="float-right">
+                                    <a href="" class="text-white">
+                                        <small>Clear All</small>
+                                    </a>
+                                </span>Notification
+                            </h5>
+                        </div>
+
+                        <div class="slimscroll noti-scroll">
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-success">
+                                    <i class="mdi mdi-settings-outline"></i>
+                                </div>
+                                <p class="notify-details">New settings
+                                    <small class="text-muted">There are new settings available</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info">
+                                    <i class="mdi mdi-bell-outline"></i>
+                                </div>
+                                <p class="notify-details">Updates
+                                    <small class="text-muted">There are 2 new updates available</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-danger">
+                                    <i class="mdi mdi-account-plus"></i>
+                                </div>
+                                <p class="notify-details">New user
+                                    <small class="text-muted">You have 10 unread messages</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info">
+                                    <i class="mdi mdi-comment-account-outline"></i>
+                                </div>
+                                <p class="notify-details">Caleb Flakelar commented on Admin
+                                    <small class="text-muted">4 days ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-secondary">
+                                    <i class="mdi mdi-heart"></i>
+                                </div>
+                                <p class="notify-details">Carlos Crouch liked
+                                    <b>Admin</b>
+                                    <small class="text-muted">13 days ago</small>
+                                </p>
+                            </a>
+                        </div>
+
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-primary notify-item notify-all">
+                            View all
+                            <i class="fi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- Notification -->
+                <!-- Email Notification -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-email-outline noti-icon"></i>
+                        <span class="noti-icon-badge"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+
+                        <!-- item-->
+                        <div class="dropdown-item noti-title">
+                            <h5 class="font-16 text-white m-0">
+                                <span class="float-right">
+                                    <a href="" class="text-white">
+                                        <small>Clear All</small>
+                                    </a>
+                                </span>Messages
+                            </h5>
+                        </div>
+
+                        <div class="slimscroll noti-scroll">
+
+                            <div class="inbox-widget">
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Chadengle</p>
+                                        <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Tomaslau</p>
+                                        <p class="inbox-item-text text-truncate">I've finished it! See you so...</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Stillnotdavid</p>
+                                        <p class="inbox-item-text text-truncate">This theme is awesome!</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Kurafire</p>
+                                        <p class="inbox-item-text text-truncate">Nice to meet you</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Shahedk</p>
+                                        <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
+
+                                    </div>
+                                </a>
+                            </div> <!-- end inbox-widget -->
+
+                        </div>
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-primary notify-item notify-all">
+                            View all
+                            <i class="fi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- Email Notification -->
+                <!-- Client Dropdown List -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown"
+                        href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                        <span class="d-none d-sm-inline-block ml-1 font-weight-medium">Sandy</span>
+                        <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                        <!-- item-->
+                        <div class="dropdown-header noti-title">
+                            <h6 class="text-overflow text-white m-0">Welcome !</h6>
+                        </div>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <i class="mdi mdi-account-outline"></i>
+                            <span>Profile</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <i class="mdi mdi-settings-outline"></i>
+                            <span>Settings</span>
+                        </a>
+
+                        <div class="dropdown-divider"></div>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <i class="mdi mdi-logout-variant"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- Client Dropdown List -->
+
+            </ul>
+
+            <!--ExMyB LOGO -->
+            <div class="logo-box">
+                <a href="javascript: void(0);" class="logo text-center logo-light">
+                    <span class="logo-lg">
+                        <img src="https://django-b2b.s3.amazonaws.com/static/img/logo/exmyb_logo_white.png" alt=""
+                            height="40">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="assets/images/exmyb-logo-sm-light.png" alt="" height="40">
+                    </span>
+                </a>
+            </div>
+            <!--ExMyB LOGO -->
+
+            <!--Toogle Button -->
+            <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                <li>
+                    <button class="button-menu-mobile waves-effect waves-light">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                </li>
+            </ul>
+            <!--Toogle Button -->
+
+        </div>
+        <!-- end Topbar -->
+
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <div class="slimscroll-menu">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <ul class="metismenu" id="side-menu">
+
+                        <li class="menu-title">Navigation</li>
+
+                        <li>
+                            <a href="index.html">
+                                <i class="mdi mdi-view-dashboard"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-file-tree"></i>
+                                <span> My Project </span>
+                            </a>
+                        </li>
+
+                        <!-- <li>
+                                <a href="javascript: void(0);">
+                                    <i class="mdi mdi-flip-horizontal"></i>
+                                    <span> List </span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="javascript: void(0);">List 1</a></li>
+                                    <li><a href="javascript: void(0);">List 2</a></li>
+                                    <li><a href="javascript: void(0);">List 3</a></li>
+                                </ul>
+                            </li> -->
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-steam"></i>
+                                <span> Manage Team </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="support.html">
+                                <i class="mdi mdi-help-circle-outline"></i>
+                                <span> Support </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-logout-variant"></i>
+                                <span> Logout </span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Exmyb</a></li>
+                                        <li class="breadcrumb-item">My Projects</li>
+                                        <li class="breadcrumb-item active">ERP Software Development</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">ERP Software Development</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <!-- Main Content START -->
+                    <div class="main-content">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box shadow-none bg-content-grey">
+                                    <div class="row">
+                                       <div class="col-lg-12">
+                                            <div class="tab-container">
+                                                <ul class="nav nav-tabs nav-justified" id="projectTabJustified" >
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-overview.html" >Overview</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-phases.html" >Phases</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-calender.html" >Calender</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-ganntt-chart.html" >Gantt View</a>
+                                                    </li>
+                                                    <!-- <li class="nav-item">
+                                                        <a class="nav-link"  href="project-manage-access.html" >Manage Access</a>
+                                                    </li> -->
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active"  href="project-attachment.html" >Attachment</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                       </div>
+                                       <!-- Tab content -->
+                                       <div class="space"></div>
+                                     
+                                       <div class="col-lg-12">
+                                            <div id="drag-drop-area"></div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="space"></div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card card-body shadow-none">
+                                                    <h3 class="card-title">Attachment</h3>
+                                                    <div class="" id="project-details-attachment">
+                                                        <div class="file" style="min-width: 200px;">
+                                                            <div class="media align-items-center">
+                                                                <div class="avatar avatar-icon avatar-cyan rounded m-r-15">
+                                                                    <i class="far fa-file-archive font-size-20"></i>
+                                                                </div>
+                                                                <div class="media-detail">
+                                                                    <h6 class="mb-0">Mockup.zip</h6>
+                                                                    <span class="font-size-13 text-muted">7MB</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                        <div class="file" style="min-width: 200px;">
+                                                            <div class="media align-items-center">
+                                                                <div class="avatar avatar-icon avatar-blue rounded m-r-15">
+                                                                    <i class="far fa-file-word font-size-20"></i>
+                                                                </div>
+                                                                <div class="media-detail">
+                                                                    <h6 class="mb-0">Guideline.doc</h6>
+                                                                    <span class="font-size-13 text-muted">128 KB</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="file" style="min-width: 200px;">
+                                                            <div class="media align-items-center">
+                                                                <div class="avatar avatar-icon avatar-gold rounded m-r-15">
+                                                                    <i class="far fa-file-image font-size-20"></i>
+                                                                </div>
+                                                                <div class="media-detail">
+                                                                    <h6 class="mb-0">Logo.png</h6>
+                                                                    <span class="font-size-13 text-muted">128 KB</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="file" style="min-width: 200px;">
+                                                            <div class="media align-items-center">
+                                                                <div class="avatar avatar-icon avatar-red rounded m-r-15">
+                                                                    <i class="far fa-file-pdf font-size-20"></i>
+                                                                </div>
+                                                                <div class="media-detail">
+                                                                    <h6 class="mb-0">project.pdf</h6>
+                                                                    <span class="font-size-13 text-muted">35 KB</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+    
+                                                    </div> 
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                       <!-- Tab content -->
+                                    </div>
+                                    <!-- end row -->
+
+
+                                </div>
+                            </div><!-- end col-->
+
+                        </div>
+
+                    </div> <!-- end Main Content -->
+
+            </div> <!-- end content -->
+
+
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            2021 &copy; <a href="">Exmyb.com </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+
+
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+    
+      <!--Form Plugin js-->
+    <script src="assets/libs/parsleyjs/parsley.min.js"></script>
+
+    <!-- Validation init js-->
+    <script src="assets/js/pages/form-validation.init.js"></script>
+
+    <script src="https://transloadit.edgly.net/releases/uppy/v1.6.0/uppy.min.js"></script>
+
+    <script>
+      var uppy = Uppy.Core()
+        .use(Uppy.Dashboard, {
+          inline: true,
+          target: '#drag-drop-area',
+          width: 1200,
+          height: 400,
+        })
+        .use(Uppy.Tus, {endpoint: 'https://master.tus.io/files/'}) //you can put upload URL here, where you want to upload images
+ 
+      uppy.on('complete', (result) => {
+        console.log('Upload complete! We’ve uploaded these files:', result.successful)
+      })
+    
+      $('.uppy-Dashboard-inner').css("width","100%");
+     
+      $(document).ready( ()=>{
+        $('.file').append('<span class="close-btn"><i class="fas fa-times"></i></span>')
+        $('.close-btn').on('click',function(){
+            var class_name1 =  $(this).parent().remove();
+          
+        })
+      });
+    </script>
+
+</body>
+
+</html>

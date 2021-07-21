@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Project Phases | ExMyB </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Responsive bootstrap 4 admin template" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link href="https://django-b2b.s3.amazonaws.com/static/images/logo/favicon.png" rel="icon">
+    <link href="https://django-b2b.s3.amazonaws.com/static/images/logo/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet" />
+    <link href="assets/css/custom-style.min.css" rel="stylesheet" type="text/css" id="app-stylesheet" />
+
+    <style>
+.task-color{
+  background-color: #f8fafc;
+}
+.phases-thead tr th{
+  border-top: 1px solid #e9ecef!important;
+  border-bottom: 1px solid #e9ecef!important;
+  background-color: #fff;
+}
+
+.phase-container{
+  display: flex;
+  flex-direction: column;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+}
+.phase-row{
+  background-color: #fff;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    max-width: 1200px;
+    height: 45px;
+    position: relative;
+}
+.phase-heading-left{
+  align-items: stretch;
+  background-color: #fff;
+  color: #6f7782;
+  display: flex;
+  flex-direction: row;
+  height: 37px;
+  position: absolute;
+  left: 0;
+  width: 50%;
+  float: left;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+}
+.phase-heading-task-heading-name{
+  align-items: center;
+  display: flex;
+  color: #000;
+  font-size: .875rem;
+  font-weight: bold;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.phase-heading-task-name{
+  align-items: center;
+  display: flex;
+  color: #000;
+    font-size: .875rem;
+    font-weight: bold;
+}
+.phase-title{
+    color: #6f7782;
+    font-size: .875rem;
+    font-weight: bold;
+    
+}
+.phase-heading-task-name a{
+    text-decoration: none;
+    color: #6f7782;
+}
+.phase-heading-right{
+  color: #6f7782;
+  align-items: stretch;
+  display: flex;
+  flex: 1 0 auto;
+  height: 37px;
+  width: 50%;
+  float: right;
+  justify-content: space-around;
+  /* justify-content: flex-end; */
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.phase-heading-task-name{
+  margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.phase-list {
+  /* padding: 0.5rem 2rem; */
+}
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css";
+
+
+.fa-caret-right {
+  transition: all 0.4s ease;
+ color: #6f7782;
+ margin-right: 0.5rem;
+}
+
+.active .fa-caret-right {
+  transform: rotate(90deg);
+}
+
+.panel-body{
+
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-height: 1px;
+  position: relative;
+  width: 100%;
+}
+.panel-title a{
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+}
+
+.active .panel-heading {
+  background-color: white;
+  border-bottom: 0;
+}
+.active .panel-body {
+  border: 0 !important;
+}
+
+.sub-phase-list{
+ display: flex;
+ flex-direction: row;
+ height: 37px;
+ position: absolute;   
+ left: 20px;
+}
+
+.sub-phase-list p{
+    /* margin-right: 2rem; */
+    margin-left: 2rem;
+    align-items: center;
+    display: flex;
+    color: #6f7782;
+    font-size: .875rem;
+    font-weight: normal;
+    height: 100%;
+}
+
+.phase-list-left{
+  align-items: stretch;
+  background-color: #ffffff;
+  color: #6f7782;
+  display: flex;
+  flex-direction: row;
+  height: 37px;
+  position: absolute;
+  left: 0;
+  width:50%;
+ /*  border-top: 1px solid #e9ecef; */
+/*   border-bottom: 1px solid #e9ecef; */
+}
+.phase-list-cell-value{
+    align-items: center;
+    display: flex;
+    padding: 0 1.4rem;
+    /* margin: 0 0.4rem; */
+    font-size: 12px;
+}
+.phase-list-right{
+  color: #6f7782;
+  font-size: .875rem;
+    font-weight: bold;
+  background-color: #ffffff;
+  align-items: stretch;
+  display: flex;
+  flex: 1 0 auto;
+  height: 37px;
+  width: 50%;
+  float: right;
+  justify-content: space-around;
+  /* justify-content: flex-end; */
+  /* border-top: 1px solid #e9ecef; */
+/*   border-bottom: 1px solid #e9ecef; */
+}
+
+@media (max-width: 768px) {
+    .nav-tabs .nav-link{font-size: 1rem;}
+    .card-box{max-width: 1200px;overflow-x: auto;}
+    .phase-container{width: 1200px;}
+    .phase-row{width: 100%;}
+    .slide{width: 100%;padding: 15px;}
+    .slide h1{margin-bottom: 10px;font-size: 20px;}
+    .feedback-task, .feedback-assignee, .feedback-due-date, .feedback-project, .feedback-priority, .feedback-status{width: calc(100% - 50px);}
+    .feedback-value{padding-left: 10px;}
+    .submitted-comments ul{margin:1rem;}
+    .comment-object{padding: 0 1em 0 0.5em;}
+}
+
+    </style>
+
+</head>
+
+<body class="left-side-menu-dark topbar-light">
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <ul class="list-unstyled topnav-menu float-right mb-0">
+                <!-- Notification -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline noti-icon"></i>
+                        <span class="noti-icon-badge"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+
+                        <!-- item-->
+                        <div class="dropdown-item noti-title">
+                            <h5 class="font-16 text-white m-0">
+                                <span class="float-right">
+                                    <a href="" class="text-white">
+                                        <small>Clear All</small>
+                                    </a>
+                                </span>Notification
+                            </h5>
+                        </div>
+
+                        <div class="slimscroll noti-scroll">
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-success">
+                                    <i class="mdi mdi-settings-outline"></i>
+                                </div>
+                                <p class="notify-details">New settings
+                                    <small class="text-muted">There are new settings available</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info">
+                                    <i class="mdi mdi-bell-outline"></i>
+                                </div>
+                                <p class="notify-details">Updates
+                                    <small class="text-muted">There are 2 new updates available</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-danger">
+                                    <i class="mdi mdi-account-plus"></i>
+                                </div>
+                                <p class="notify-details">New user
+                                    <small class="text-muted">You have 10 unread messages</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info">
+                                    <i class="mdi mdi-comment-account-outline"></i>
+                                </div>
+                                <p class="notify-details">Caleb Flakelar commented on Admin
+                                    <small class="text-muted">4 days ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-secondary">
+                                    <i class="mdi mdi-heart"></i>
+                                </div>
+                                <p class="notify-details">Carlos Crouch liked
+                                    <b>Admin</b>
+                                    <small class="text-muted">13 days ago</small>
+                                </p>
+                            </a>
+                        </div>
+
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-primary notify-item notify-all">
+                            View all
+                            <i class="fi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- Notification -->
+                <!-- Email Notification -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-email-outline noti-icon"></i>
+                        <span class="noti-icon-badge"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+
+                        <!-- item-->
+                        <div class="dropdown-item noti-title">
+                            <h5 class="font-16 text-white m-0">
+                                <span class="float-right">
+                                    <a href="" class="text-white">
+                                        <small>Clear All</small>
+                                    </a>
+                                </span>Messages
+                            </h5>
+                        </div>
+
+                        <div class="slimscroll noti-scroll">
+
+                            <div class="inbox-widget">
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Chadengle</p>
+                                        <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Tomaslau</p>
+                                        <p class="inbox-item-text text-truncate">I've finished it! See you so...</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Stillnotdavid</p>
+                                        <p class="inbox-item-text text-truncate">This theme is awesome!</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Kurafire</p>
+                                        <p class="inbox-item-text text-truncate">Nice to meet you</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Shahedk</p>
+                                        <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
+
+                                    </div>
+                                </a>
+                            </div> <!-- end inbox-widget -->
+
+                        </div>
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-primary notify-item notify-all">
+                            View all
+                            <i class="fi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- Email Notification -->
+                <!-- Client Dropdown List -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown"
+                        href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                        <span class="d-none d-sm-inline-block ml-1 font-weight-medium">Sandy</span>
+                        <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                        <!-- item-->
+                        <div class="dropdown-header noti-title">
+                            <h6 class="text-overflow text-white m-0">Welcome !</h6>
+                        </div>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <i class="mdi mdi-account-outline"></i>
+                            <span>Profile</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <i class="mdi mdi-settings-outline"></i>
+                            <span>Settings</span>
+                        </a>
+
+                        <div class="dropdown-divider"></div>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <i class="mdi mdi-logout-variant"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- Client Dropdown List -->
+
+            </ul>
+
+            <!--ExMyB LOGO -->
+            <div class="logo-box">
+                <a href="javascript: void(0);" class="logo text-center logo-light">
+                    <span class="logo-lg">
+                        <img src="https://django-b2b.s3.amazonaws.com/static/img/logo/exmyb_logo_white.png" alt=""
+                            height="40">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="assets/images/exmyb-logo-sm-light.png" alt="" height="40">
+                    </span>
+                </a>
+            </div>
+            <!--ExMyB LOGO -->
+
+            <!--Toogle Button -->
+            <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                <li>
+                    <button class="button-menu-mobile waves-effect waves-light">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                </li>
+            </ul>
+            <!--Toogle Button -->
+
+        </div>
+        <!-- end Topbar -->
+
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <div class="slimscroll-menu">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <ul class="metismenu" id="side-menu">
+
+                        <li class="menu-title">Navigation</li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-view-dashboard"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-file-tree"></i>
+                                <span> My Project </span>
+                            </a>
+                        </li>
+
+                        <!-- <li>
+                                <a href="javascript: void(0);">
+                                    <i class="mdi mdi-flip-horizontal"></i>
+                                    <span> List </span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="javascript: void(0);">List 1</a></li>
+                                    <li><a href="javascript: void(0);">List 2</a></li>
+                                    <li><a href="javascript: void(0);">List 3</a></li>
+                                </ul>
+                            </li> -->
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-steam"></i>
+                                <span> Manage Team </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-help-circle-outline"></i>
+                                <span> Support </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-logout-variant"></i>
+                                <span> Logout </span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Exmyb</a></li>
+                                        <li class="breadcrumb-item">My Projects</li>
+                                        <li class="breadcrumb-item active">ERP Software Development</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">ERP Software Development</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <!-- Main Content START -->
+                    <div class="main-content">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box shadow-none bg-content-grey">
+                                    <div class="row">
+                                       <div class="col-lg-12">
+                                            <div class="tab-container">
+                                                <ul class="nav nav-tabs nav-justified" id="projectTabJustified" >
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-overview.html" >Overview</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active"  href="javascript:void(0);" >Phases</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-calender.html" >Calender</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-ganntt-chart.html" >Gantt View</a>
+                                                    </li>
+                                                    <!-- <li class="nav-item">
+                                                        <a class="nav-link "  href="project-manage-access.html" >Manage Access</a>
+                                                    </li> -->
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-attachment.html" >Attachment</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                       </div>
+                                       <!-- Tab content -->
+                                       <div class="space"></div>
+                                       <div class="col-lg-12">
+                                        <div class="card-box shadow-sm">
+                                            <div class="phase-container">
+                                                <div class="phase-row">
+                                                    <div class="phase-heading-left">
+                                                        <div class="phase-heading-task-heading-name">Task Name</div>
+                                                    </div>
+                                                    <div class="phase-heading-right">
+                                                        <div class="phase-heading-task-heading-name">Start Date</div>
+                                                        <div class="phase-heading-task-heading-name">End Date</div>    
+                                                        <div class="phase-heading-task-heading-name">Priority</div>
+                                                        <div class="phase-heading-task-heading-name">Status</div>
+                                                    </div>
+                                                </div>
+                                                <div class="phase-list">
+                                                    <div class="panel-group" id="accordion">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <div class="panel-body">
+                                                                    <div class="phase-row">
+                                                                        <div class="phase-list-left">
+                                                                            <div class="phase-heading-task-name">
+                                                                                <a  data-toggle="collapse"  data-parent="#accordion" href="#collapse_1"><i class="fa fa-caret-right"></i></a>  
+                                                                                <div class="phase-title" id="task_name_1"> UI / UX Design </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="phase-list-right">
+                                                                            <div class="phase-list-cell-value text-danger " id="start-date">15 Apr, 2021</div>
+                                                                            <div class="phase-list-cell-value text-danger " id="end-date" >15 May, 2021</div>    
+                                                                            <div class="phase-list-cell-value priority_val_div"><span class="badge badge-pill badge-danger ">High</span></div>
+                                                                            <div class="phase-list-cell-value"><span class="badge badge-pill badge-cyan status_val">In Progress</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>  
+                                                            </div>
+                                                            
+                                                            <div id="collapse_1" class="panel-collapse collapse in">
+                                                                <div class="panel-body" id="subtask" style="cursor: pointer;">
+                                                                    <div class="phase-row">
+                                                                        <div class="sub-phase-list">
+                                                                            <p id="sub_phase_1">Sub Task 1 Will display here</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="phase-row">
+                                                                        <div class="sub-phase-list">
+                                                                            <p id="sub_phase_2">Sub Task 2 Will display here</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+
+                                                    </div>
+                                                </div>
+                                                <div class="phase-list">
+                                                    <div class="panel-group" id="accordion">
+                                                        <div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <div class="panel-body">
+                                                                    <div class="phase-row">
+                                                                        <div class="phase-list-left">
+                                                                            <div class="phase-heading-task-name">
+                                                                                <a  data-toggle="collapse"  data-parent="#accordion" href="#collapse_2"><i class="fa fa-caret-right"></i></a>  
+                                                                                <div class="phase-title" id="task_name_2">  Implementation of UI / UX</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="phase-list-right">
+                                                                            <div class="phase-list-cell-value text-danger " id="start-date">15 Apr, 2021</div>
+                                                                            <div class="phase-list-cell-value text-danger " id="end-date" >15 May, 2021</div>    
+                                                                            <div class="phase-list-cell-value priority_val_div"><span class="badge badge-pill badge-info ">medium</span></div>
+                                                                            <div class="phase-list-cell-value"><span class="badge badge-pill badge-cyan status_val">In Progress</span></div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>  
+                                                            </div>
+                                                            
+                                                            <div id="collapse_2" class="panel-collapse collapse in">
+                                                                <div class="panel-body" id="subtask" style="cursor: pointer;">
+                                                                    <div class="phase-row">
+                                                                        <div class="sub-phase-list">
+                                                                            <p id="sub_phase_1">Sub Task 1 Will display here</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="phase-row">
+                                                                        <div class="sub-phase-list">
+                                                                            <p id="sub_phase_2">Sub Task 2 Will display here</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+
+                                                    </div>
+                                                </div>
+                                                   
+                                                </div>
+                                            </div>
+                                          
+                                        </div>
+                                    </div>
+                                    
+                                       <!-- Tab content -->
+                                    </div>
+                                    <!-- end row -->
+
+
+                                </div>
+                            </div><!-- end col-->
+
+                        </div>
+
+                    </div> <!-- end Main Content -->
+
+            </div> <!-- end content -->
+
+            <!-- Slide Form -->
+            <div class="slide" style="top: 60%;">
+                <!-- <div class="toggle"></div> -->
+                <h1>Phase Feedback</h1>
+                <div class="feedback-container slimscroll " id="slide_show">
+                    <div class="feedback-details ">
+                        <div class="feedback-task">
+                            <div class="feedback-label">
+                                Task Description
+                            </div>
+                            <div class="feedback-value project_heading">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae consequuntur maxime a debitis eos hic alias, quasi dignissimos necessitatibus reiciendis possimus non culpa inventore sed magni earum quaerat vel atque.
+                            </div>
+                        </div>
+                        <div class="feedback-due-date">
+                            <div class="feedback-label">
+                                Start Date
+                            </div>
+                            <div class="feedback-value text-danger start_date">
+                                15 Apr, 2021
+                            </div>
+                        </div>
+                        <div class="feedback-due-date">
+                            <div class="feedback-label">
+                                Due Date
+                            </div>
+                            <div class="feedback-value text-danger due_date">
+                                15 Apr, 2021
+                            </div>
+                        </div>
+                        <div class="feedback-project">
+                            <div class="feedback-label">
+                                Project
+                            </div>
+                            <div class="feedback-value font-weight-medium ">
+                                ERP Software Development
+                            </div>
+                        </div>
+                        <div class="feedback-priority">
+                            <div class="feedback-label">
+                                Priority
+                            </div>
+                            <div class="feedback-value slide_priority">
+                                <span class="badge badge-pill badge-danger ">High</span>
+                            </div>
+                        </div>
+                        <div class="feedback-status">
+                            <div class="feedback-label">
+                                Status
+                            </div>
+                            <div class="feedback-value">
+                                <span class="badge badge-pill badge-cyan slide_status">In Progress</span>
+                            </div>
+                        </div>
+                        <div class="comment-display">
+                            <div class="submitted-comments">
+                                <ul>
+                                    <li class="comment-object">
+                                        <div class="image-container">
+                                          <img class="profile-pic" src="file:///D:/Exmyb/exmyb-git/ExMyB-Client-Dashboard/assets/images/users/avatar-1.jpg" alt="profile picture">
+                                        </div>
+                                        <div class="comment-text">
+                                          <h2 class="username">Yash Aggarwal <span class="comment-time">· 3 hours ago</span></h2>
+                                          <p class="comment">added to ExMyB Client Dashboard.</p>
+                                        </div>
+                                      </li>
+                                </ul>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ----For Comment Box--- -->
+                <div id="app">
+                    <div class="container">
+                      <!-- <div class="comment-display">
+                        <div class="submitted-comments">
+                            <p v-for="items in item" v-text="items"></p>
+                          </div>
+                      </div> -->
+                      <div class="comment-box">
+                        <textarea id="comment" rows="4" type="text" class="input" placeholder="Write a comment" ></textarea>
+                        <ul>
+                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="bold"><i class="fa fa-bold"></i></a></li>
+                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="italic"><i class="fa fa-italic"></i></a></li>
+                            <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="attach-file"><i class="fa fa-paperclip"></i></a></li>
+                        </ul>
+                        <button  type="submit"  class='btn btn-primary waves-effect waves-light' style="float: right;">Add Comment</button>
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+
+              <p>hello <time class="timeago" datetime="2021-04-21T09:14:21.192Z" title="">about 1 day ago</time></p>
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            2021 &copy; <a href="">Exmyb.com </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+
+
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <!-- Time Age js -->
+    <script src="assets/js/timeago.js"></script>
+
+    
+<script>
+    //Accordian
+    (function() {
+    
+    $(".panel").on("show.bs.collapse hide.bs.collapse", function(e) {
+        if (e.type=='show'){
+        $(this).addClass('active');
+        }else{
+        $(this).removeClass('active');
+        }
+    });  
+
+    }).call(this);
+
+    $("time.timeago").timeago();
+
+    </script>
+ 
+ <script>
+
+    $(document).ready(function(){
+
+        $("time.timeago").timeago();
+        
+        // For Task Slide form
+
+       $('.phase-heading-task-name .phase-title').click(function(e){
+        e.stopPropagation();
+           /* console.log ("Toogle Clicked"); */
+           
+         var current_value = $(this).parent().parent().parent(); 
+
+         var project_name = $(current_value).find('.phase-title').text();
+         var start_date = $(current_value).find('#start-date').text();
+         var end_date = $(current_value).find('#end-date').text();
+         var priority_phase = $(current_value).find('.priority_val_div').html();
+         var status_phase = $(current_value).find('.status_val').text();
+        //  alert(priority_phase);
+
+        $('#slide_show').find('.project_heading').html(project_name);
+        $('#slide_show').find('.due_date').html(end_date);
+        $('#slide_show').find('.start_date').html(start_date);
+        $('#slide_show').find('.slide_priority').html(priority_phase);
+        $('#slide_show').find('.slide_status').html(status_phase);
+         
+         $('.slide').toggleClass('active')
+         
+        /*  $('.panel-body#subtask').toggleClass('active') */
+       
+       })
+
+       $('.slide').click(function(e){
+            e.stopPropagation();
+        });
+        $('body,html').click(function(e){
+            $('.slide').removeClass('active');
+        });
+
+
+        //For comment display on submit
+        
+        $("button").on('click',function(){
+           
+            var dt = new Date();
+            var commentTime = dt.toISOString();//converting into localtimezone
+            $("time.timeago").timeago();//TimeAgo function called
+            var comment = $.trim($("#comment").val());
+            var comment_display = `<li class="comment-object">
+                                        <div class="image-container">
+                                          <img class="profile-pic" src="file:///D:/Exmyb/exmyb-git/ExMyB-Client-Dashboard/assets/images/users/avatar-1.jpg" alt="profile picture">
+                                        </div>
+                                        <div class="comment-text">
+                                          <h2 class="username">Yash Aggarwal <time class="comment-time timeago" datetime="${commentTime}">about sec ago</time></h2>
+                                          <p class="comment">${comment}</p>
+                                        </div>
+                                      </li>`;
+            if(comment != ""){
+                // Show alert dialog if value is not blank
+                /* alert(comment); */
+               $(".submitted-comments ul").append(comment_display); 
+               $("#comment").val('');
+            }
+           
+        });
+
+
+    });
+
+
+
+$(document).ready(function(){
+       
+        
+    });    
+ </script>
+
+</body>
+
+</html>

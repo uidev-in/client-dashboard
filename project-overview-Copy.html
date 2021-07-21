@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Project Details | ExMyB </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Responsive bootstrap 4 admin template" name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link href="https://django-b2b.s3.amazonaws.com/static/images/logo/favicon.png" rel="icon">
+    <link href="https://django-b2b.s3.amazonaws.com/static/images/logo/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap-stylesheet" />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-stylesheet" />
+    <link href="assets/css/custom-style.min.css" rel="stylesheet" type="text/css" id="app-stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link  href="assets/libs/dropzone/dropzone.min.css" rel="stylesheet" type="text/css"/>
+    <style>
+        #one
+        {
+          margin-top:50px;
+         box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+        }
+        .it .btn-orange
+        {
+          background-color: transparent;
+          border-color: #777!important;
+          color: #777;
+          text-align: left;
+          width:100%;
+        }
+        .it input.form-control
+        {
+          height: 54px;
+          border:none;
+          margin-bottom:0px;
+          border-radius: 0px;
+          border-bottom: 1px solid #ddd;
+          box-shadow: none;
+        }
+        .it .form-control:focus
+        {
+          border-color: #16987e;
+          box-shadow: none;
+          outline: none;
+        }
+        .fileUpload {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+        }
+        .fileUpload input.upload {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+        .it .btn-new, .it .btn-next
+        {
+          margin: 30px 0px;
+          border-radius: 0px;
+          background-color: #333;
+          color: #f5f5f5;
+          font-size: 16px;
+          width: 155px;
+        }
+        .it .btn-next
+        {
+          background-color: #16987e;
+          color: #fff;
+        }
+        .it .btn-check
+        {
+          cursor:pointer;
+          line-height:54px;
+          color:red;
+        }
+        .it .uploadDoc
+        {
+          margin-bottom: 20px;
+        }
+        .it .uploadDoc
+        {
+          margin-bottom: 20px;
+        }
+        .it .btn-orange img {
+            width: 30px;
+        }
+        .it p
+        {
+          font-size:16px;
+          text-align:center;
+          margin:30px 0px;
+        }
+        .it #uploader .docErr
+        {
+          position: absolute;
+            right:auto;
+            left: 10px;
+            top: -56px;
+            padding: 10px;
+            font-size: 15px;
+            background-color: #fff;
+            color: red;
+            box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.2);
+            display: none;
+        }
+        .it #uploader .docErr:after
+        {
+          content: '\f0d7';
+          display: inline-block;
+          font-family: FontAwesome;
+          font-size: 50px;
+          color: #fff;
+          position: absolute;
+          left: 30px;
+          bottom: -40px;
+          text-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+        }
+        </style>
+        
+          <script>
+          window.console = window.console || function(t) {};
+        </script>
+        
+          
+          
+          <script>
+          if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+          }
+        </script>
+</head>
+
+<body class="left-side-menu-dark topbar-light">
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+
+        <!-- Topbar Start -->
+        <div class="navbar-custom">
+            <ul class="list-unstyled topnav-menu float-right mb-0">
+                <!-- Notification -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-bell-outline noti-icon"></i>
+                        <span class="noti-icon-badge"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+
+                        <!-- item-->
+                        <div class="dropdown-item noti-title">
+                            <h5 class="font-16 text-white m-0">
+                                <span class="float-right">
+                                    <a href="" class="text-white">
+                                        <small>Clear All</small>
+                                    </a>
+                                </span>Notification
+                            </h5>
+                        </div>
+
+                        <div class="slimscroll noti-scroll">
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-success">
+                                    <i class="mdi mdi-settings-outline"></i>
+                                </div>
+                                <p class="notify-details">New settings
+                                    <small class="text-muted">There are new settings available</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info">
+                                    <i class="mdi mdi-bell-outline"></i>
+                                </div>
+                                <p class="notify-details">Updates
+                                    <small class="text-muted">There are 2 new updates available</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-danger">
+                                    <i class="mdi mdi-account-plus"></i>
+                                </div>
+                                <p class="notify-details">New user
+                                    <small class="text-muted">You have 10 unread messages</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info">
+                                    <i class="mdi mdi-comment-account-outline"></i>
+                                </div>
+                                <p class="notify-details">Caleb Flakelar commented on Admin
+                                    <small class="text-muted">4 days ago</small>
+                                </p>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-secondary">
+                                    <i class="mdi mdi-heart"></i>
+                                </div>
+                                <p class="notify-details">Carlos Crouch liked
+                                    <b>Admin</b>
+                                    <small class="text-muted">13 days ago</small>
+                                </p>
+                            </a>
+                        </div>
+
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-primary notify-item notify-all">
+                            View all
+                            <i class="fi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- Notification -->
+                <!-- Email Notification -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle  waves-effect waves-light" data-toggle="dropdown" href="#"
+                        role="button" aria-haspopup="false" aria-expanded="false">
+                        <i class="mdi mdi-email-outline noti-icon"></i>
+                        <span class="noti-icon-badge"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-lg">
+
+                        <!-- item-->
+                        <div class="dropdown-item noti-title">
+                            <h5 class="font-16 text-white m-0">
+                                <span class="float-right">
+                                    <a href="" class="text-white">
+                                        <small>Clear All</small>
+                                    </a>
+                                </span>Messages
+                            </h5>
+                        </div>
+
+                        <div class="slimscroll noti-scroll">
+
+                            <div class="inbox-widget">
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-1.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Chadengle</p>
+                                        <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-2.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Tomaslau</p>
+                                        <p class="inbox-item-text text-truncate">I've finished it! See you so...</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-3.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Stillnotdavid</p>
+                                        <p class="inbox-item-text text-truncate">This theme is awesome!</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-4.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Kurafire</p>
+                                        <p class="inbox-item-text text-truncate">Nice to meet you</p>
+                                    </div>
+                                </a>
+                                <a href="#">
+                                    <div class="inbox-item">
+                                        <div class="inbox-item-img"><img src="assets/images/users/avatar-5.jpg"
+                                                class="rounded-circle" alt=""></div>
+                                        <p class="inbox-item-author">Shahedk</p>
+                                        <p class="inbox-item-text text-truncate">Hey! there I'm available...</p>
+
+                                    </div>
+                                </a>
+                            </div> <!-- end inbox-widget -->
+
+                        </div>
+                        <!-- All-->
+                        <a href="javascript:void(0);" class="dropdown-item text-primary notify-item notify-all">
+                            View all
+                            <i class="fi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- Email Notification -->
+                <!-- Client Dropdown List -->
+                <li class="dropdown notification-list">
+                    <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown"
+                        href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                        <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+                        <span class="d-none d-sm-inline-block ml-1 font-weight-medium">Sandy</span>
+                        <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                        <!-- item-->
+                        <div class="dropdown-header noti-title">
+                            <h6 class="text-overflow text-white m-0">Welcome !</h6>
+                        </div>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <i class="mdi mdi-account-outline"></i>
+                            <span>Profile</span>
+                        </a>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <i class="mdi mdi-settings-outline"></i>
+                            <span>Settings</span>
+                        </a>
+
+                        <div class="dropdown-divider"></div>
+
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item notify-item">
+                            <i class="mdi mdi-logout-variant"></i>
+                            <span>Logout</span>
+                        </a>
+
+                    </div>
+                </li>
+                <!-- Client Dropdown List -->
+
+            </ul>
+
+            <!--ExMyB LOGO -->
+            <div class="logo-box">
+                <a href="javascript: void(0);" class="logo text-center logo-light">
+                    <span class="logo-lg">
+                        <img src="https://django-b2b.s3.amazonaws.com/static/img/logo/exmyb_logo_white.png" alt=""
+                            height="40">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="assets/images/exmyb-logo-sm-light.png" alt="" height="40">
+                    </span>
+                </a>
+            </div>
+            <!--ExMyB LOGO -->
+
+            <!--Toogle Button -->
+            <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
+                <li>
+                    <button class="button-menu-mobile waves-effect waves-light">
+                        <i class="mdi mdi-menu"></i>
+                    </button>
+                </li>
+            </ul>
+            <!--Toogle Button -->
+
+        </div>
+        <!-- end Topbar -->
+
+
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left-side-menu">
+
+            <div class="slimscroll-menu">
+
+                <!--- Sidemenu -->
+                <div id="sidebar-menu">
+
+                    <ul class="metismenu" id="side-menu">
+
+                        <li class="menu-title">Navigation</li>
+
+                        <li>
+                            <a href="index.html">
+                                <i class="mdi mdi-view-dashboard"></i>
+                                <span> Dashboard </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-file-tree"></i>
+                                <span> My Project </span>
+                            </a>
+                        </li>
+
+                        <!-- <li>
+                                <a href="javascript: void(0);">
+                                    <i class="mdi mdi-flip-horizontal"></i>
+                                    <span> List </span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="javascript: void(0);">List 1</a></li>
+                                    <li><a href="javascript: void(0);">List 2</a></li>
+                                    <li><a href="javascript: void(0);">List 3</a></li>
+                                </ul>
+                            </li> -->
+
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-steam"></i>
+                                <span> Manage Team </span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="support.html">
+                                <i class="mdi mdi-help-circle-outline"></i>
+                                <span> Support </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);">
+                                <i class="mdi mdi-logout-variant"></i>
+                                <span> Logout </span>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <!-- End Sidebar -->
+
+                <div class="clearfix"></div>
+
+            </div>
+            <!-- Sidebar -left -->
+
+        </div>
+        <!-- Left Sidebar End -->
+
+
+        <!-- ============================================================== -->
+        <!-- Start Page Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+            <div class="content">
+
+                <!-- Start Content-->
+                <div class="container-fluid">
+
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <div class="page-title-right">
+                                    <ol class="breadcrumb m-0">
+                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Exmyb</a></li>
+                                        <li class="breadcrumb-item">My Projects</li>
+                                        <li class="breadcrumb-item active">ERP Software Development</li>
+                                    </ol>
+                                </div>
+                                <h4 class="page-title">ERP Software Development</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+
+                    <!-- Main Content START -->
+                    <div class="main-content">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box shadow-none bg-content-grey">
+
+                                    <div class="row">
+                                       <div class="col-lg-12">
+                                            <div class="tab-container">
+                                                <ul class="nav nav-tabs nav-justified" id="projectTabJustified" >
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active"  href="javascript:void(0);" >Overview</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-phases.html" >Phases</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-calender.html" >Calender</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-ganntt-chart.html" >Dashboard</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link"  href="project-manage-access.html" >Manage Access</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        <div class="tab-content m-t-15" id="projectTabContentJustified">
+                                            <!-- <div class="tab-pane fade show active" id="project-overview" role="tabpanel" aria-labelledby="overview-tab-justified">
+                                                <div>
+                                                    Overview Tab Called
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="project-phases" role="tabpanel" aria-labelledby="phases-tab-justified">
+                                                <div>
+                                                    Phases Tab Called
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="project-calender" role="tabpanel" aria-labelledby="calender-tab-justified">
+                                                <div>
+                                                    Calender Tab Called
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="project-dashboard" role="tabpanel" aria-labelledby="dashboard-tab-justified">
+                                                <div>
+                                                    Dashboard Tab Called
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="project-manange-access" role="tabpanel" aria-labelledby="manange-access-tab-justified">
+                                                <div>
+                                                    Manage Access Tab Called
+                                                </div>
+                                            </div> -->
+                                        
+                                        </div>
+                                       </div>
+                                       <!-- Tab content -->
+                                       <div class="space"></div>
+                                       <div class="col-lg-12">
+                                           
+                                        <div class="tab-pane fade show active" id="project-overview" >
+                                            <div class=" "></div>
+                                           
+                                            <div class="row">
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <div>
+                                                                    <p class="m-b-0">Project Name</p>
+                                                                    <h5 class="m-b-0">
+                                                                        <span>ERP Software Development</span>
+                                                                    </h5>
+                                                                </div>
+                                                                <div class="avatar avatar-icon avatar-lg avatar-gold">
+                                                                    <i class="ion ion-ios-bulb"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <div>
+                                                                    <p class="m-b-0">Nature Of Work</p>
+                                                                    <h5 class="m-b-0">
+                                                                        <span>Software Development</span>
+                                                                    </h5>
+                                                                </div>
+                                                                <div class="avatar avatar-icon avatar-lg avatar-cyan">
+                                                                    <i class="ion ion-md-laptop"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <div>
+                                                                    <p class="m-b-0">Project Timeline</p>
+                                                                    <h5 class="m-b-0">
+                                                                        <span>120 Days</span>
+                                                                    </h5>
+                                                                </div>
+                                                                <div class="avatar avatar-icon avatar-lg avatar-red">
+                                                                    <i class="mdi mdi-calendar-month-outline"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 col-lg-4">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <div>
+                                                                    <p class="m-b-0">Vendor</p>
+                                                                    <h5 class="m-b-0">
+                                                                        Yash <span style="font-weight: 400;">(OneDesign)</span>
+                                                                    </h5>
+                                                                </div>
+                                                                <div class="avatar avatar-icon avatar-lg avatar-blue">
+                                                                    <i class="ion ion-ios-person"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                             <div class="row">
+                                                <div class="col-md-12 col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <div>
+                                                                    <h5 class="m-b-0">References</h5>
+                                                                    <!-- <div class="m-b-0">
+                                                                        <h5>www.exmyb.com</h5>
+                                                                    </div> -->
+                                                                </div>
+                                                                <div class="avatar avatar-icon avatar-lg avatar-magenta">
+                                                                    <i class=" ion ion-ios-globe"></i>
+                                                                </div>
+                                                                <div class="more-detail-btn shadow-md">
+                                                                    <a class="btn more-btn" id="cr_collapse_1" data-toggle="collapse" href="#collapseExample_1" role="button" aria-expanded="false" aria-controls="collapseExample_1">
+                                                                        <i class="ion ion-ios-arrow-down"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="client-portfolio-full-details collapse" id="collapseExample_1">
+                                                                <div class="card-body py-0 w-100">
+                                                                    <div class="cr-expand-details">
+                                                                        <p>Business requirements are criteria that are necessary to meet organizational objectives. Typically, they outline how the product or solution will address the needs of the company and its users.</p>
+                                                                        <ul>
+                                                                            <li>The following considerations to include when mapping out business requirements:</li>
+                                                                            <li>What is the purpose of the app or product? What are you trying to accomplish?</li>
+                                                                            <li>What is the current problem(s) it will solve?</li>
+                                                                            <li>How will it improve the current process? Will it facilitate a new process?</li>
+                                                                            <li><a href="https://clearbridgemobile.com/how-to-choose-the-best-features-for-mobile-app/">What is the product vision statement?</a></li>
+                                                                            <li>Will the app need to be started from scratch, or can you leverage existing assets?</li>
+                                                                            <li>What should the app be able to do? What is the product’s core functionality?</li>
+                                                                            <li>What features will it need?</li>
+                                                                            <li><a href="https://clearbridgemobile.com/choosing-the-right-app-monetization-strategy/">What is the monetization or business model?</a></li>
+                                                                            <li>Are there branding and design guidelines to follow?</li>
+                                                                            <li><a href="https://clearbridgemobile.com/how-to-balance-product-ideas-project-constraints/">Is the ask feasible?</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <div>
+                                                                    <h5 class="m-b-0">Expectations</h5>
+                                                                    <!-- <div class="m-b-0">
+                                                                        <h5>www.exmyb.com</h5>
+                                                                    </div> -->
+                                                                </div>
+                                                                <div class="avatar avatar-icon avatar-lg avatar-purple">
+                                                                    <i class=" ion ion-ios-done-all"></i>
+                                                                </div>
+                                                                <div class="more-detail-btn shadow-md">
+                                                                    <a class="btn more-btn" id="" data-toggle="collapse" href="#collapseExample_2" role="button" aria-expanded="false" aria-controls="collapseExample_1">
+                                                                        <i class="ion ion-ios-arrow-down"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="client-portfolio-full-details collapse" id="collapseExample_2">
+                                                                <div class="card-body py-0 w-100">
+                                                                    <div class="cr-expand-details">
+                                                                        <p>Business requirements are criteria that are necessary to meet organizational objectives. Typically, they outline how the product or solution will address the needs of the company and its users.</p>
+                                                                        <ul>
+                                                                            <li>The following considerations to include when mapping out business requirements:</li>
+                                                                            <li>What is the purpose of the app or product? What are you trying to accomplish?</li>
+                                                                            <li>What is the current problem(s) it will solve?</li>
+                                                                            <li>How will it improve the current process? Will it facilitate a new process?</li>
+                                                                            <li><a href="https://clearbridgemobile.com/how-to-choose-the-best-features-for-mobile-app/">What is the product vision statement?</a></li>
+                                                                            <li>Will the app need to be started from scratch, or can you leverage existing assets?</li>
+                                                                            <li>What should the app be able to do? What is the product’s core functionality?</li>
+                                                                            <li>What features will it need?</li>
+                                                                            <li><a href="https://clearbridgemobile.com/choosing-the-right-app-monetization-strategy/">What is the monetization or business model?</a></li>
+                                                                            <li>Are there branding and design guidelines to follow?</li>
+                                                                            <li><a href="https://clearbridgemobile.com/how-to-balance-product-ideas-project-constraints/">Is the ask feasible?</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="d-flex justify-content-between align-items-center">
+                                                                <div>
+                                                                    <h5 class="m-b-0">Extra Inforamtaions</h5>
+                                                                    <!-- <div class="m-b-0">
+                                                                        <h5>www.exmyb.com</h5>
+                                                                    </div> -->
+                                                                </div>
+                                                                <div class="avatar avatar-icon avatar-lg avatar-lime">
+                                                                    <i class=" ion ion-ios-radio"></i>
+                                                                </div>
+                                                                <div class="more-detail-btn shadow-md">
+                                                                    <a class="btn more-btn" id="" data-toggle="collapse" href="#collapseExample_3" role="button" aria-expanded="false" aria-controls="collapseExample_1">
+                                                                        <i class="ion ion-ios-arrow-down"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="client-portfolio-full-details collapse" id="collapseExample_3">
+                                                                <div class="card-body py-0 w-100">
+                                                                    <div class="cr-expand-details">
+                                                                        <p>Business requirements are criteria that are necessary to meet organizational objectives. Typically, they outline how the product or solution will address the needs of the company and its users.</p>
+                                                                        <ul>
+                                                                            <li>The following considerations to include when mapping out business requirements:</li>
+                                                                            <li>What is the purpose of the app or product? What are you trying to accomplish?</li>
+                                                                            <li>What is the current problem(s) it will solve?</li>
+                                                                            <li>How will it improve the current process? Will it facilitate a new process?</li>
+                                                                            <li><a href="https://clearbridgemobile.com/how-to-choose-the-best-features-for-mobile-app/">What is the product vision statement?</a></li>
+                                                                            <li>Will the app need to be started from scratch, or can you leverage existing assets?</li>
+                                                                            <li>What should the app be able to do? What is the product’s core functionality?</li>
+                                                                            <li>What features will it need?</li>
+                                                                            <li><a href="https://clearbridgemobile.com/choosing-the-right-app-monetization-strategy/">What is the monetization or business model?</a></li>
+                                                                            <li>Are there branding and design guidelines to follow?</li>
+                                                                            <li><a href="https://clearbridgemobile.com/how-to-balance-product-ideas-project-constraints/">Is the ask feasible?</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </div>
+
+                                       </div>
+                                       <!-- Tab content -->
+                                    </div>
+                                    <!-- end row -->
+
+
+                                </div>
+                            </div><!-- end col-->
+
+                        </div>
+
+                        <div class="attachment">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-12">
+
+                                    <div class="row it" style="padding: 30px;">
+                                        <div class="col-sm-12 bg-white" id="one">
+                                        <p>
+                                        Please upload documents only in 'pdf', 'docx', 'zip', 'jpg', 'jpeg', 'png' &amp; 'text' format.
+                                        </p><br>
+                                        <div class="row">
+                                          <div class="col-sm-offset-4 col-sm-4 form-group">
+                                            <h3 class="text-center">My Documents</h3>
+                                          </div><!--form-group-->
+                                        </div><!--row-->
+                                        <div id="uploader">
+                                        <div class="row uploadDoc">
+                                          <div class="col-sm-3">
+                                            <div class="docErr">Please upload valid file</div><!--error-->
+                                            <div class="fileUpload btn btn-orange">
+                                              <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon">
+                                              <span class="upl" id="upload">Upload document</span>
+                                              <input type="file" class="upload up" id="up" onchange="readURL(this);">
+                                            </div><!-- btn-orange -->
+                                          </div><!-- col-3 -->
+                                          <div class="col-sm-8">
+                                            <input type="text" class="form-control" name="" placeholder="Note">
+                                          </div><!--col-8-->
+                                          <div class="col-sm-1"><a class="btn-check"><i class="fa fa-times"></i></a></div><!-- col-1 -->
+                                        </div><!--row-->
+                                        </div><!--uploader-->
+                                        <div class="text-center">
+                                        <a class=" text-white btn btn-new"><i class="fa fa-plus"></i> Add new</a>
+                                        <a class=" text-white btn btn-next"><i class="fa fa-paper-plane"></i> Submit</a>
+                                        </div>
+                                        </div><!--one-->
+                                        </div><!-- row -->
+
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                    </div> <!-- end Main Content -->
+
+            </div> <!-- end content -->
+
+
+
+            <!-- Footer Start -->
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            2021 &copy; <a href="">Exmyb.com </a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- End Footer -->
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+    </div>
+    <!-- END wrapper -->
+
+
+
+
+    <!-- Vendor js -->
+    <script src="assets/js/vendor.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.min.js"></script>
+
+    <script src="assets/libs/dropzone/dropzone.min.js" type="text/javascript"></script>
+
+    <script>
+       $('.more-btn').click(function() {
+            $('.ion-ios-arrow-down:before').toggleClass("ion-ios-arrow-down");
+            $(this).toggleClass("rotate");
+        });
+    </script>
+
+
+<script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script id="rendered-js">
+var fileTypes = ['pdf', 'docx', 'zip', 'jpg', 'jpeg', 'png', 'txt']; //acceptable file types
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var extension = input.files[0].name.split('.').pop().toLowerCase(), //file extension from input file
+    isSuccess = fileTypes.indexOf(extension) > -1; //is extension in acceptable types
+
+    if (isSuccess) {//yes
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        if (extension == 'pdf') {
+          $(input).closest('.fileUpload').find(".icon").attr('src', 'https://image.flaticon.com/icons/svg/179/179483.svg');
+        } else
+        if (extension == 'docx') {
+          $(input).closest('.fileUpload').find(".icon").attr('src', 'https://image.flaticon.com/icons/svg/281/281760.svg');
+        } else
+        if (extension == 'zip') {
+          $(input).closest('.fileUpload').find(".icon").attr('src', 'https://www.flaticon.com/svg/vstatic/svg/337/337960.svg?token=exp=1619415768~hmac=756c6e8533eada6c59c7364a1ef88026');
+        } else
+        if (extension == 'png') {$(input).closest('.fileUpload').find(".icon").attr('src', 'https://image.flaticon.com/icons/svg/136/136523.svg');
+        } else
+        if (extension == 'jpg' || extension == 'jpeg') {
+          $(input).closest('.fileUpload').find(".icon").attr('src', 'https://image.flaticon.com/icons/svg/136/136524.svg');
+        } else
+        if (extension == 'txt') {
+          $(input).closest('.fileUpload').find(".icon").attr('src', 'https://image.flaticon.com/icons/svg/136/136538.svg');
+        } else
+        {
+          //console.log('here=>'+$(input).closest('.uploadDoc').length);
+          $(input).closest('.uploadDoc').find(".docErr").slideUp('slow');
+        }
+      };
+
+      reader.readAsDataURL(input.files[0]);
+    } else
+    {
+      //console.log('here=>'+$(input).closest('.uploadDoc').find(".docErr").length);
+      $(input).closest('.uploadDoc').find(".docErr").fadeIn();
+      setTimeout(function () {
+        $('.docErr').fadeOut('slow');
+      }, 9000);
+    }
+  }
+}
+$(document).ready(function () {
+
+  $(document).on('change', '.up', function () {
+    var id = $(this).attr('id'); /* gets the filepath and filename from the input */
+    var profilePicValue = $(this).val();
+    var fileNameStart = profilePicValue.lastIndexOf('\\'); /* finds the end of the filepath */
+    profilePicValue = profilePicValue.substr(fileNameStart + 1).substring(0, 20); /* isolates the filename */
+    //var profilePicLabelText = $(".upl"); /* finds the label text */
+    if (profilePicValue != '') {
+      //console.log($(this).closest('.fileUpload').find('.upl').length);
+      $(this).closest('.fileUpload').find('.upl').html(profilePicValue); /* changes the label text */
+    }
+  });
+
+  $(".btn-new").on('click', function () {
+    $("#uploader").append('<div class="row uploadDoc"><div class="col-sm-3"><div class="docErr">Please upload valid file</div><!--error--><div class="fileUpload btn btn-orange"> <img src="https://image.flaticon.com/icons/svg/136/136549.svg" class="icon"><span class="upl" id="upload">Upload document</span><input type="file" class="upload up" id="up" onchange="readURL(this);" /></div></div><div class="col-sm-8 pt-1"><input type="text" class="form-control" name="" placeholder="Note"></div><div class="col-sm-1"><a class="btn-check"><i class="fa fa-times"></i></a></div></div>');
+  });
+
+  $(document).on("click", "a.btn-check", function () {
+    if ($(".uploadDoc").length > 1) {
+      $(this).closest(".uploadDoc").remove();
+    } else {
+      alert("You have to upload at least one document.");
+    }
+  });
+});
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
